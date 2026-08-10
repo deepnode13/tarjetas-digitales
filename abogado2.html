@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
 
-    <meta 
-        name="viewport" 
-        content="width=device-width, initial-scale=1.0"
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
-    <meta 
-        name="description" 
-        content="Tarjeta digital profesional de abogado"
+    <meta
+        name="description"
+        content="Tarjeta digital profesional de Ricardo Soto, abogado."
     >
+
+    <meta name="theme-color" content="#082c61">
 
     <title>Ricardo Soto | Abogado</title>
+
 
     <style>
 
@@ -22,19 +27,19 @@
         ===================================================== */
 
         :root {
-            --azul-oscuro: #06285a;
-            --azul-medio: #123d78;
-            --azul-claro: #1e477e;
 
-            --dorado: #d9a02b;
-            --dorado-claro: #e5b341;
+            --azul: #082d63;
+            --azul-oscuro: #041b3d;
+            --azul-claro: #123f79;
+
+            --dorado: #dba32c;
+            --dorado-claro: #e9b641;
 
             --blanco: #ffffff;
-            --gris: #dfe7f2;
+            --gris: #dce5f0;
 
-            --sombra: 0 25px 60px rgba(0, 0, 0, 0.30);
+            --radio: 22px;
 
-            --radio: 24px;
         }
 
 
@@ -43,39 +48,57 @@
         ===================================================== */
 
         * {
+
             margin: 0;
             padding: 0;
+
             box-sizing: border-box;
+
         }
+
 
         html {
+
+            width: 100%;
+
+            min-height: 100%;
+
             scroll-behavior: smooth;
+
         }
 
+
         body {
+
+            width: 100%;
             min-height: 100vh;
 
+            padding: 20px;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
 
-            padding: 30px;
-
             font-family:
                 "Segoe UI",
+                Roboto,
                 Arial,
-                Helvetica,
                 sans-serif;
 
             background:
+
                 radial-gradient(
                     circle at top left,
-                    #31547f 0%,
-                    #071f45 45%,
-                    #03142e 100%
+                    #254d80 0%,
+                    #0a2d5d 40%,
+                    #03152f 100%
                 );
 
             color: var(--blanco);
+
+            overflow-x: hidden;
+
         }
 
 
@@ -88,6 +111,7 @@
             position: relative;
 
             width: 100%;
+
             max-width: 1050px;
 
             min-height: 590px;
@@ -97,22 +121,27 @@
             border-radius: var(--radio);
 
             background:
+
                 linear-gradient(
                     135deg,
                     rgba(18, 61, 120, 0.98),
-                    rgba(3, 25, 58, 0.98)
+                    rgba(3, 24, 55, 0.99)
                 );
 
-            box-shadow: var(--sombra);
+            box-shadow:
 
-            border: 1px solid rgba(255,255,255,0.08);
+                0 25px 60px
+                rgba(0, 0, 0, 0.35);
 
-            isolation: isolate;
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
         }
 
 
         /* =====================================================
-           ELEMENTOS DECORATIVOS
+           DECORACIÓN
         ===================================================== */
 
         .business-card::before {
@@ -121,17 +150,20 @@
 
             position: absolute;
 
-            width: 600px;
-            height: 600px;
+            width: 650px;
+            height: 650px;
 
-            right: -280px;
-            top: -250px;
+            right: -350px;
+            top: -350px;
 
             border-radius: 50%;
 
-            border: 1px solid rgba(217,160,43,0.15);
+            border:
+                1px solid
+                rgba(217,160,43,0.14);
 
-            z-index: -1;
+            pointer-events: none;
+
         }
 
 
@@ -141,49 +173,24 @@
 
             position: absolute;
 
-            width: 450px;
-            height: 450px;
+            width: 500px;
+            height: 500px;
 
-            left: -300px;
-            bottom: -250px;
+            left: -350px;
+            bottom: -350px;
 
             border-radius: 50%;
 
-            background: rgba(217,160,43,0.04);
-
-            z-index: -1;
-        }
-
-
-        /* =====================================================
-           LINEA DORADA
-        ===================================================== */
-
-        .gold-line {
-
-            position: absolute;
-
-            left: 0;
-            right: 0;
-
-            top: 290px;
-
-            height: 4px;
-
             background:
-                linear-gradient(
-                    90deg,
-                    var(--dorado),
-                    var(--dorado-claro),
-                    var(--dorado)
-                );
+                rgba(217,160,43,0.04);
 
-            z-index: 1;
+            pointer-events: none;
+
         }
 
 
         /* =====================================================
-           CONTENIDO PRINCIPAL
+           CONTENIDO
         ===================================================== */
 
         .card-content {
@@ -193,10 +200,11 @@
             display: grid;
 
             grid-template-columns:
-                minmax(0, 1fr)
+                1fr
                 430px;
 
             min-height: 590px;
+
         }
 
 
@@ -206,26 +214,34 @@
 
         .information {
 
-            padding: 75px 20px 55px 80px;
+            position: relative;
+
+            z-index: 2;
+
+            padding:
+
+                70px
+                30px
+                130px
+                75px;
 
             display: flex;
 
             flex-direction: column;
 
-            justify-content: space-between;
+            justify-content: center;
 
-            z-index: 2;
         }
 
 
-        .name-section {
-            margin-bottom: 30px;
-        }
-
+        /* =====================================================
+           NOMBRE
+        ===================================================== */
 
         .name {
 
-            font-size: clamp(42px, 5vw, 62px);
+            font-size:
+                clamp(40px, 5vw, 62px);
 
             line-height: 0.95;
 
@@ -234,6 +250,7 @@
             letter-spacing: -2px;
 
             color: var(--blanco);
+
         }
 
 
@@ -241,17 +258,48 @@
 
             margin-top: 12px;
 
-            font-size: clamp(25px, 3vw, 38px);
-
-            font-weight: 700;
+            font-size:
+                clamp(26px, 3vw, 38px);
 
             line-height: 1;
 
-            color: var(--dorado-claro);
+            font-weight: 700;
 
             text-transform: uppercase;
 
             letter-spacing: 1px;
+
+            color: var(--dorado-claro);
+
+        }
+
+
+        /* =====================================================
+           LÍNEA DORADA
+        ===================================================== */
+
+        .gold-line {
+
+            position: absolute;
+
+            z-index: 5;
+
+            left: 0;
+            right: 0;
+
+            top: 290px;
+
+            height: 4px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    var(--dorado),
+                    var(--dorado-claro),
+                    var(--dorado)
+                );
+
         }
 
 
@@ -261,48 +309,55 @@
 
         .contact-information {
 
-            margin-top: 45px;
+            margin-top: 48px;
 
             display: flex;
 
             flex-direction: column;
 
-            gap: 20px;
+            gap: 18px;
+
         }
 
 
         .contact-item {
 
+            width: 100%;
+
             display: flex;
 
             align-items: center;
 
-            gap: 15px;
+            gap: 14px;
 
             color: var(--blanco);
 
             text-decoration: none;
 
-            font-size: 20px;
+            font-size: 19px;
+
+            line-height: 1.3;
 
             transition:
-                transform 0.25s ease,
-                color 0.25s ease;
+                transform 0.2s ease,
+                color 0.2s ease;
+
         }
 
 
         .contact-item:hover {
 
-            transform: translateX(6px);
+            transform: translateX(5px);
 
             color: var(--dorado-claro);
+
         }
 
 
         .contact-icon {
 
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
 
             flex-shrink: 0;
 
@@ -315,11 +370,112 @@
 
             background: var(--blanco);
 
-            color: var(--azul-oscuro);
+            color: var(--azul);
 
-            font-size: 19px;
+            font-size: 17px;
 
             font-weight: bold;
+
+        }
+
+
+        .contact-text {
+
+            min-width: 0;
+
+            overflow-wrap: anywhere;
+
+            word-break: break-word;
+
+        }
+
+
+        /* =====================================================
+           BOTONES
+        ===================================================== */
+
+        .actions {
+
+            margin-top: 32px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+        }
+
+
+        .action-button {
+
+            min-height: 44px;
+
+            padding:
+                10px
+                20px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            border-radius: 50px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border 0.2s ease;
+
+        }
+
+
+        .action-primary {
+
+            background: var(--dorado);
+
+            color: var(--azul-oscuro);
+
+        }
+
+
+        .action-primary:hover {
+
+            background: var(--dorado-claro);
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .action-secondary {
+
+            border:
+                1px solid
+                rgba(255,255,255,0.35);
+
+            color: var(--blanco);
+
+        }
+
+
+        .action-secondary:hover {
+
+            border-color: var(--dorado);
+
+            color: var(--dorado-claro);
+
+            transform: translateY(-2px);
+
         }
 
 
@@ -329,14 +485,22 @@
 
         .photo-section {
 
+            position: relative;
+
+            z-index: 2;
+
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
-            padding: 50px 45px 50px 10px;
+            padding:
+                40px
+                45px
+                120px
+                10px;
 
-            z-index: 3;
         }
 
 
@@ -348,20 +512,24 @@
 
             aspect-ratio: 1 / 1;
 
-            border-radius: 50%;
-
             padding: 8px;
 
+            border-radius: 50%;
+
             background:
+
                 linear-gradient(
                     135deg,
                     var(--dorado-claro),
                     var(--dorado),
-                    #b57b13
+                    #b67d13
                 );
 
             box-shadow:
-                0 15px 45px rgba(0,0,0,0.35);
+
+                0 18px 45px
+                rgba(0,0,0,0.35);
+
         }
 
 
@@ -371,66 +539,76 @@
 
             position: absolute;
 
-            inset: -14px;
+            inset: -12px;
 
             border-radius: 50%;
 
-            border: 1px solid rgba(217,160,43,0.25);
+            border:
+                1px solid
+                rgba(217,160,43,0.30);
+
         }
 
 
         .lawyer-photo {
 
+            display: block;
+
             width: 100%;
             height: 100%;
 
-            display: block;
-
             object-fit: cover;
+
+            object-position: center;
 
             border-radius: 50%;
 
-            border: 4px solid var(--azul-oscuro);
+            border:
+                4px solid
+                var(--azul-oscuro);
 
             background: #e6e6e6;
+
         }
 
 
         /* =====================================================
-           FIRMA / BUFETE
+           BUFETE
         ===================================================== */
 
         .firm {
 
             position: absolute;
 
-            right: 55px;
+            right: 50px;
 
-            bottom: 28px;
+            bottom: 27px;
+
+            z-index: 10;
 
             display: flex;
 
             align-items: center;
 
-            gap: 15px;
+            gap: 12px;
 
-            z-index: 5;
         }
 
 
         .scales {
 
-            width: 55px;
-
-            height: 55px;
+            width: 52px;
+            height: 52px;
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             color: var(--dorado-claro);
+
+            flex-shrink: 0;
+
         }
 
 
@@ -439,152 +617,139 @@
             display: flex;
 
             flex-direction: column;
+
         }
 
 
         .firm-title {
 
-            font-size: 25px;
+            font-size: 24px;
+
+            line-height: 1;
 
             font-weight: 700;
 
             letter-spacing: 3px;
 
             color: var(--blanco);
+
         }
 
 
         .firm-subtitle {
 
-            margin-top: 3px;
+            margin-top: 5px;
 
-            font-size: 13px;
+            font-size: 12px;
 
             letter-spacing: 3px;
 
             color: var(--gris);
+
         }
+
 
 
         /* =====================================================
-           BOTONES
-        ===================================================== */
-
-        .actions {
-
-            display: flex;
-
-            gap: 12px;
-
-            margin-top: 35px;
-        }
-
-
-        .action-button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 8px;
-
-            padding: 11px 18px;
-
-            border-radius: 50px;
-
-            text-decoration: none;
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            transition: all 0.25s ease;
-        }
-
-
-        .action-primary {
-
-            background: var(--dorado);
-
-            color: var(--azul-oscuro);
-        }
-
-
-        .action-primary:hover {
-
-            background: var(--dorado-claro);
-
-            transform: translateY(-2px);
-
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-
-
-        .action-secondary {
-
-            border: 1px solid rgba(255,255,255,0.3);
-
-            color: var(--blanco);
-        }
-
-
-        .action-secondary:hover {
-
-            border-color: var(--dorado);
-
-            color: var(--dorado-claro);
-
-            transform: translateY(-2px);
-        }
-
-
-        /* =====================================================
-           RESPONSIVE - TABLET
+           TABLET
         ===================================================== */
 
         @media (max-width: 900px) {
 
             body {
-                padding: 20px;
+
+                padding: 15px;
+
             }
 
+
             .business-card {
-                min-height: auto;
+
+                max-width: 700px;
+
             }
+
 
             .card-content {
 
                 grid-template-columns: 1fr;
 
                 min-height: auto;
+
             }
+
 
             .gold-line {
+
                 display: none;
+
             }
 
-            .information {
-
-                padding:
-                    50px
-                    45px
-                    30px;
-            }
 
             .photo-section {
 
+                order: 1;
+
                 padding:
-                    10px
-                    45px
+                    55px
+                    40px
+                    30px;
+
+            }
+
+
+            .information {
+
+                order: 2;
+
+                padding:
+                    30px
+                    50px
                     120px;
+
+                text-align: center;
+
             }
 
-            .photo-wrapper {
 
-                width: 300px;
+            .name {
+
+                font-size: 52px;
+
             }
+
+
+            .profession {
+
+                font-size: 32px;
+
+            }
+
+
+            .contact-information {
+
+                align-items: center;
+
+            }
+
+
+            .contact-item {
+
+                width: auto;
+
+                max-width: 100%;
+
+                justify-content: center;
+
+            }
+
+
+            .actions {
+
+                justify-content: center;
+
+            }
+
 
             .firm {
 
@@ -592,96 +757,193 @@
 
                 transform: translateX(50%);
 
-                bottom: 30px;
+                bottom: 28px;
 
-                white-space: nowrap;
             }
+
         }
 
 
+
         /* =====================================================
-           RESPONSIVE - CELULAR
+           CELULARES
         ===================================================== */
 
         @media (max-width: 600px) {
 
             body {
-                padding: 12px;
+
+                min-height: 100vh;
+
+                padding:
+                    10px;
+
+                align-items: flex-start;
+
             }
+
 
             .business-card {
 
+                width: 100%;
+
+                min-height: auto;
+
                 border-radius: 18px;
+
             }
 
-            .information {
-
-                padding:
-                    40px
-                    25px
-                    20px;
-            }
-
-            .name {
-
-                font-size: 43px;
-
-                letter-spacing: -1.5px;
-            }
-
-            .profession {
-
-                font-size: 27px;
-            }
-
-            .contact-information {
-
-                margin-top: 35px;
-
-                gap: 16px;
-            }
-
-            .contact-item {
-
-                font-size: 16px;
-
-                gap: 11px;
-
-                word-break: break-word;
-            }
-
-            .contact-icon {
-
-                width: 38px;
-                height: 38px;
-
-                font-size: 16px;
-            }
 
             .photo-section {
 
                 padding:
-                    20px
+                    38px
                     25px
-                    120px;
+                    10px;
+
             }
+
 
             .photo-wrapper {
 
-                width: 260px;
+                width:
+                    min(
+                        70vw,
+                        270px
+                    );
+
+                min-width: 210px;
+
+                padding: 7px;
+
             }
+
+
+            .photo-wrapper::before {
+
+                inset: -8px;
+
+            }
+
+
+            .information {
+
+                padding:
+                    30px
+                    22px
+                    125px;
+
+                text-align: center;
+
+            }
+
+
+            .name {
+
+                font-size:
+                    clamp(
+                        34px,
+                        11vw,
+                        45px
+                    );
+
+                letter-spacing: -1.5px;
+
+                line-height: 1;
+
+                white-space: normal;
+
+                overflow-wrap: anywhere;
+
+            }
+
+
+            .profession {
+
+                margin-top: 10px;
+
+                font-size:
+                    clamp(
+                        23px,
+                        7vw,
+                        30px
+                    );
+
+                letter-spacing: 0.5px;
+
+            }
+
+
+            .contact-information {
+
+                margin-top: 32px;
+
+                gap: 14px;
+
+                align-items: stretch;
+
+            }
+
+
+            .contact-item {
+
+                width: 100%;
+
+                justify-content: flex-start;
+
+                text-align: left;
+
+                font-size: 15px;
+
+                gap: 10px;
+
+            }
+
+
+            .contact-icon {
+
+                width: 37px;
+                height: 37px;
+
+                font-size: 15px;
+
+            }
+
+
+            .contact-text {
+
+                flex: 1;
+
+            }
+
 
             .actions {
 
+                margin-top: 25px;
+
                 flex-direction: column;
+
+                width: 100%;
+
+                gap: 10px;
+
             }
+
 
             .action-button {
 
                 width: 100%;
+
+                min-height: 46px;
+
+                font-size: 14px;
+
             }
 
+
             .firm {
+
+                position: absolute;
 
                 right: 50%;
 
@@ -689,54 +951,246 @@
 
                 transform: translateX(50%);
 
+                width: calc(100% - 40px);
+
+                justify-content: center;
+
                 gap: 8px;
+
             }
+
 
             .scales {
 
-                width: 40px;
+                width: 38px;
+                height: 38px;
 
-                height: 40px;
             }
+
 
             .firm-title {
 
-                font-size: 17px;
+                font-size:
+                    clamp(
+                        15px,
+                        4.5vw,
+                        20px
+                    );
 
-                letter-spacing: 2px;
+                letter-spacing:
+                    clamp(
+                        1px,
+                        0.6vw,
+                        2px
+                    );
+
             }
+
 
             .firm-subtitle {
 
-                font-size: 9px;
+                margin-top: 4px;
 
-                letter-spacing: 2px;
+                font-size:
+                    clamp(
+                        8px,
+                        2.5vw,
+                        10px
+                    );
+
+                letter-spacing:
+                    clamp(
+                        1px,
+                        0.5vw,
+                        2px
+                    );
+
             }
+
+        }
+
+
+
+        /* =====================================================
+           CELULARES PEQUEÑOS
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            body {
+
+                padding: 6px;
+
+            }
+
+
+            .business-card {
+
+                border-radius: 15px;
+
+            }
+
+
+            .photo-section {
+
+                padding-top: 28px;
+
+            }
+
+
+            .photo-wrapper {
+
+                width: 215px;
+
+                min-width: 0;
+
+            }
+
+
+            .information {
+
+                padding-left: 18px;
+
+                padding-right: 18px;
+
+            }
+
+
+            .contact-item {
+
+                font-size: 14px;
+
+            }
+
+
+            .contact-icon {
+
+                width: 34px;
+                height: 34px;
+
+            }
+
+
+            .firm {
+
+                width:
+                    calc(100% - 25px);
+
+            }
+
+
+            .firm-title {
+
+                font-size: 14px;
+
+            }
+
+
+            .firm-subtitle {
+
+                font-size: 7px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           PANTALLAS MUY ALTAS / MÓVIL
+        ===================================================== */
+
+        @media (max-width: 600px) and (min-height: 750px) {
+
+            .photo-section {
+
+                padding-top: 55px;
+
+            }
+
+
+            .photo-wrapper {
+
+                width:
+                    min(
+                        65vw,
+                        290px
+                    );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           REDUCIR ANIMACIONES
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            * {
+
+                scroll-behavior: auto !important;
+
+                transition: none !important;
+
+            }
+
         }
 
     </style>
+
 </head>
+
 
 
 <body>
 
 
     <!-- =====================================================
-         TARJETA DIGITAL
+         TARJETA
     ===================================================== -->
 
     <main class="business-card">
-
-
-        <!-- Línea dorada -->
-        <div class="gold-line"></div>
 
 
         <div class="card-content">
 
 
             <!-- =================================================
-                 INFORMACIÓN DEL ABOGADO
+                 FOTO
+            ================================================= -->
+
+            <section class="photo-section">
+
+                <div class="photo-wrapper">
+
+                    <!--
+                    ==================================================
+                    FOTO DE GITHUB
+                    ==================================================
+
+                    Sustituye esta URL por la URL RAW de tu imagen.
+
+                    Ejemplo:
+
+                    https://raw.githubusercontent.com/
+                    USUARIO/REPOSITORIO/main/foto.jpg
+                    -->
+
+                    <img
+                        class="lawyer-photo"
+                        src="https://raw.githubusercontent.com/deepnode13/tarjetas-digitales/main/abogado1.jpg"
+                        alt="Ricardo Soto - Abogado"
+                    >
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 INFORMACIÓN
             ================================================= -->
 
             <section class="information">
@@ -745,22 +1199,24 @@
                 <div>
 
 
-                    <div class="name-section">
+                    <!-- Nombre -->
 
-                        <h1 class="name">
-                            Ricardo Soto
-                        </h1>
+                    <h1 class="name">
+                        Ricardo Soto
+                    </h1>
 
-                        <div class="profession">
-                            Abogado
-                        </div>
 
+                    <!-- Profesión -->
+
+                    <div class="profession">
+                        Abogado
                     </div>
 
 
-                    <!-- ==============================
-                         DATOS DE CONTACTO
-                    =============================== -->
+
+                    <!-- =================================================
+                         CONTACTO
+                    ================================================= -->
 
                     <div class="contact-information">
 
@@ -776,14 +1232,15 @@
                                 ☎
                             </span>
 
-                            <span>
+                            <span class="contact-text">
                                 (55) 1234-5678
                             </span>
 
                         </a>
 
 
-                        <!-- Sitio web -->
+
+                        <!-- Página web -->
 
                         <a
                             class="contact-item"
@@ -796,11 +1253,12 @@
                                 ◉
                             </span>
 
-                            <span>
+                            <span class="contact-text">
                                 www.sitioincreible.com
                             </span>
 
                         </a>
+
 
 
                         <!-- Correo -->
@@ -814,7 +1272,7 @@
                                 ✉
                             </span>
 
-                            <span>
+                            <span class="contact-text">
                                 hola@sitioincreible.com
                             </span>
 
@@ -824,28 +1282,33 @@
                     </div>
 
 
-                    <!-- ==============================
-                         ACCIONES
-                    =============================== -->
+
+                    <!-- =================================================
+                         BOTONES
+                    ================================================= -->
 
                     <div class="actions">
 
 
                         <a
+                            class="action-button action-primary"
                             href="https://wa.me/525512345678"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="action-button action-primary"
                         >
+
                             WhatsApp
+
                         </a>
 
 
                         <a
-                            href="mailto:hola@sitioincreible.com"
                             class="action-button action-secondary"
+                            href="mailto:hola@sitioincreible.com"
                         >
+
                             Enviar correo
+
                         </a>
 
 
@@ -858,61 +1321,29 @@
             </section>
 
 
-
-            <!-- =================================================
-                 FOTOGRAFÍA
-            ================================================= -->
-
-            <section class="photo-section">
-
-                <div class="photo-wrapper">
-
-                    <!--
-                        ==================================================
-                        AQUÍ COLOCARÁS LA URL DE LA FOTO EN GITHUB
-                        ==================================================
-
-                        Ejemplo:
-
-                        https://raw.githubusercontent.com/
-                        TU-USUARIO/TU-REPOSITORIO/main/foto.jpg
-
-                    -->
-
-                    <img
-                        class="lawyer-photo"
-                        src="https://raw.githubusercontent.com/deepnode13/tarjetas-digitales/main/abogado1.jpg"
-                        alt="Ricardo Soto - Abogado"
-                    >
-
-                </div>
-
-            </section>
-
-
         </div>
 
 
 
         <!-- =====================================================
-             NOMBRE DEL BUFETE
+             BUFETE
         ===================================================== -->
 
         <div class="firm">
 
 
-            <!-- Ícono de balanza -->
             <div class="scales">
 
                 <svg
-                    width="52"
-                    height="52"
+                    width="100%"
+                    height="100%"
                     viewBox="0 0 100 100"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                 >
 
                     <!-- Columna -->
+
                     <rect
                         x="46"
                         y="15"
@@ -922,7 +1353,9 @@
                         fill="currentColor"
                     />
 
+
                     <!-- Base -->
+
                     <rect
                         x="35"
                         y="80"
@@ -931,6 +1364,7 @@
                         rx="2"
                         fill="currentColor"
                     />
+
 
                     <rect
                         x="25"
@@ -941,7 +1375,9 @@
                         fill="currentColor"
                     />
 
-                    <!-- Barra superior -->
+
+                    <!-- Barra -->
+
                     <rect
                         x="25"
                         y="20"
@@ -951,7 +1387,9 @@
                         fill="currentColor"
                     />
 
+
                     <!-- Centro -->
+
                     <circle
                         cx="50"
                         cy="15"
@@ -959,7 +1397,9 @@
                         fill="currentColor"
                     />
 
-                    <!-- Cuerda izquierda -->
+
+                    <!-- Izquierda -->
+
                     <line
                         x1="30"
                         y1="23"
@@ -978,7 +1418,9 @@
                         stroke-width="3"
                     />
 
-                    <!-- Cuerda derecha -->
+
+                    <!-- Derecha -->
+
                     <line
                         x1="70"
                         y1="23"
@@ -997,13 +1439,17 @@
                         stroke-width="3"
                     />
 
+
                     <!-- Plato izquierdo -->
+
                     <path
                         d="M17 55H43C41 64 35 68 30 68C25 68 19 64 17 55Z"
                         fill="currentColor"
                     />
 
+
                     <!-- Plato derecho -->
+
                     <path
                         d="M57 55H83C81 64 75 68 70 68C65 68 59 64 57 55Z"
                         fill="currentColor"
@@ -1034,4 +1480,5 @@
 
 
 </body>
+
 </html>
